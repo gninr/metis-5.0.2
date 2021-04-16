@@ -30,7 +30,11 @@ typedef int mwIndex;
 typedef int mwSize;
 #endif /* MX_API_VER */
 
-#include <strings.h>
+#include <string.h>
+
+#ifdef WIN32
+# define strcasecmp _stricmp
+#endif
 
 #if IDXTYPEWIDTH == 32
 #  ifdef MX_COMPAT_32
